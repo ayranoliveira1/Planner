@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <Tasks />
+        <Tasks tasks={tasks} />
       </div>
     </>
   );
