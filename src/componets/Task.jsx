@@ -1,5 +1,7 @@
+import "./Task.css";
+
 const Task = ({ task }) => {
-  return <h1>{task.title}</h1>;
+  return <div className="task-conatiner">{task.title}</div>;
 };
 
 export default Task;
