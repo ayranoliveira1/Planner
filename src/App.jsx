@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-import AddTask from "./componets/AddTask";
-import Header from "./componets/Header";
-import TaskDetails from "./componets/TaskDetails";
-import Tasks from "./componets/Tasks";
+import AddTask from "./components/AddTask";
+import Header from "./components/Header";
+import TaskDetails from "./components/TaskDetails";
+import Tasks from "./components/Tasks";
 
 import "./app.css";
 
