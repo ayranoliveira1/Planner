@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 import AddTask from "./componets/AddTask";
 import Header from "./componets/Header";
+import TaskDetails from "./componets/TaskDetails";
 import Tasks from "./componets/Tasks";
 
 import "./app.css";
@@ -51,17 +53,28 @@ const Home = () => {
   };
 
   return (
-    <>
+    <Router>
       <div className="container">
         <Header />
-        <AddTask handleTaskAddition={handleTaskAddition} />
-        <Tasks
-          tasks={tasks}
-          handleTaskClick={handleTaskClick}
-          handleTaskDeletion={handleTaskDeletion}
+        <Route
+          path="/"
+          exact
+          render={() => {
+            return (
+              <>
+                <AddTask handleTaskAddition={handleTaskAddition} />
+                <Tasks
+                  tasks={tasks}
+                  handleTaskClick={handleTaskClick}
+                  handleTaskDeletion={handleTaskDeletion}
+                />
+              </>
+            );
+          }}
         />
+        <Route path="/:taskTitle" exact component={TaskDetails} />
       </div>
-    </>
+    </Router>
   );
 };
 
